@@ -18,7 +18,7 @@ func TestStackArray(t *testing.T) {
 		pop := stackPop()
 
 		t.Run("Stack Pop", func(t *testing.T) {
-			if stackLenght() == 2 && pop != 3 {
+			if stackLength() == 2 && pop != 3 {
 				t.Errorf("Stack Pop is not work we expected %v but got %v", 3, pop)
 			}
 		})

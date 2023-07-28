@@ -6,7 +6,7 @@ func stackPush(n any) {
 	stackArray = append([]any{n}, stackArray...)
 }
 
-func stackLenght() int {
+func stackLength() int {
 	return len(stackArray)
 }
 
