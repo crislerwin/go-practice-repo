@@ -14,11 +14,13 @@ func TestStackArray(t *testing.T) {
 				t.Errorf("Stack Push is not work we expected %v but got %v", []any{3, 2}, stackArray)
 			}
 		})
-	})
-}
 
-func BenchmarkStackArrayPush(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		stackPush(i)
-	}
+		pop := stackPop()
+
+		t.Run("Stack Pop", func(t *testing.T) {
+			if stackLenght() == 2 && pop != 3 {
+				t.Errorf("Stack Pop is not work we expected %v but got %v", 3, pop)
+			}
+		})
+	})
 }

@@ -3,7 +3,7 @@
 ### Stack Array
 
 - [x] stack push
-- [ ] stack length
+- [x] stack pop
+- [x] stack length
 - [ ] stack peak
 - [ ] stack empty
-- [ ] stack pop
