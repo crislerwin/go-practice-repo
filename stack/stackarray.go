@@ -15,3 +15,7 @@ func stackPop() any {
 	stackArray = stackArray[1:]
 	return pop
 }
+
+func stackPeak() any {
+	return stackArray[0]
+}

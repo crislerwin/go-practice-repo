@@ -5,5 +5,5 @@
 - [x] stack push
 - [x] stack pop
 - [x] stack length
-- [ ] stack peak
+- [x] stack peak
 - [ ] stack empty

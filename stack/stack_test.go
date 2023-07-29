@@ -22,5 +22,12 @@ func TestStackArray(t *testing.T) {
 				t.Errorf("Stack Pop is not work we expected %v but got %v", 3, pop)
 			}
 		})
+		stackPush(2)
+		stackPush(83)
+		t.Run("Stack Peak", func(t *testing.T) {
+			if stackPeak() != 83 {
+				t.Errorf("Stack Peak is not work we expected %v but got %v", 3, stackLength())
+			}
+		})
 	})
 }
