@@ -19,3 +19,7 @@ func stackPop() any {
 func stackPeak() any {
 	return stackArray[0]
 }
+
+func stackEmpty() bool {
+	return len(stackArray) == 0
+}
