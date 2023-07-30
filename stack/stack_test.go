@@ -35,5 +35,18 @@ func TestStackArray(t *testing.T) {
 				t.Errorf("Stack Length is not work we expected %v but got %v", 3, stackLength())
 			}
 		})
+
+		t.Run("Stack Empty", func(t *testing.T) {
+			if stackEmpty() == true {
+				t.Errorf("Stack Empty is not working we expected %v but got %v", true, stackEmpty())
+			}
+		})
+		stackPop()
+		stackPop()
+		stackPop()
+
+		if stackEmpty() == false {
+			t.Errorf("Stack empty is not work we expected %v but got %v", true, stackEmpty())
+		}
 	})
 }
