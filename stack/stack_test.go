@@ -50,3 +50,19 @@ func TestStackArray(t *testing.T) {
 		}
 	})
 }
+
+func TestStackLinkedList(t *testing.T) {
+	var newStack Stack
+
+	newStack.push(1)
+	newStack.push(2)
+	t.Run("Stack Push", func(t *testing.T) {
+		result := newStack.show()
+		expected := []any{2, 1}
+		for x := range result {
+			if result[x] != expected[x] {
+				t.Errorf("Stack Push is not work, got %v but expected %v", result, expected)
+			}
+		}
+	})
+}
