@@ -26,3 +26,11 @@ func (ll *Stack) show() (in []any) {
 	}
 	return
 }
+
+func (ll *Stack) isEmpty() bool {
+	return ll.length == 0
+}
+
+func (ll *Stack) len() int {
+	return ll.length
+}

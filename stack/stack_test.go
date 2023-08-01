@@ -65,4 +65,14 @@ func TestStackLinkedList(t *testing.T) {
 			}
 		}
 	})
+	t.Run("Stack isEmpty", func(t *testing.T) {
+		if newStack.isEmpty() {
+			t.Error("Stack Length is returned true but expected false", newStack.isEmpty())
+		}
+	})
+	t.Run("Stack Length", func(t *testing.T) {
+		if newStack.len() != 2 {
+			t.Error("Stack length should be 2 but got", newStack.len())
+		}
+	})
 }
