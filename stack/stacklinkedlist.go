@@ -34,3 +34,14 @@ func (ll *Stack) isEmpty() bool {
 func (ll *Stack) len() int {
 	return ll.length
 }
+
+func (ll *Stack) pop() any {
+	result := ll.top.Val
+	if ll.top.Next == nil {
+		ll.top = nil
+	} else {
+		ll.top.Val, ll.top.Next = ll.top.Next.Val, ll.top.Next.Next
+	}
+	ll.length--
+	return result
+}
