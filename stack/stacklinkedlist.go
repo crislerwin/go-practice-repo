@@ -18,23 +18,6 @@ func (ll *Stack) push(n any) {
 	ll.length++
 }
 
-func (ll *Stack) show() (in []any) {
-	current := ll.top
-	for current != nil {
-		in = append(in, current.Val)
-		current = current.Next
-	}
-	return
-}
-
-func (ll *Stack) isEmpty() bool {
-	return ll.length == 0
-}
-
-func (ll *Stack) len() int {
-	return ll.length
-}
-
 func (ll *Stack) pop() any {
 	result := ll.top.Val
 	if ll.top.Next == nil {
@@ -44,6 +27,23 @@ func (ll *Stack) pop() any {
 	}
 	ll.length--
 	return result
+}
+
+func (ll *Stack) show() (in []any) {
+	current := ll.top
+	for current != nil {
+		in = append(in, current.Val)
+		current = current.Next
+	}
+	return
+}
+
+func (ll *Stack) len() int {
+	return ll.length
+}
+
+func (ll *Stack) isEmpty() bool {
+	return ll.length == 0
 }
 
 func (ll *Stack) peak() any {
