@@ -45,3 +45,7 @@ func (ll *Stack) pop() any {
 	ll.length--
 	return result
 }
+
+func (ll *Stack) peak() any {
+	return ll.top.Val
+}

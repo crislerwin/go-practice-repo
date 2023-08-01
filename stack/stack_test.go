@@ -85,4 +85,13 @@ func TestStackLinkedList(t *testing.T) {
 			t.Error("Stack pop is should return 1 but returned", pop)
 		}
 	})
+	newStack.push(52)
+	newStack.push(23)
+	newStack.push(99)
+	t.Run("Stack Peak", func(t *testing.T) {
+		if newStack.peak() != 99 {
+			t.Error("Stack Peak should return 99 but got", newStack.peak())
+		}
+	})
+
 }
