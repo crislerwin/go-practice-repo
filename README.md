@@ -2,6 +2,6 @@
 
 ## Contents
 
-### Data Structures and Algorithms
+### Data Structures
 
-- [Stack](./stack/README.md)
+- [Stack](./data-structures/stack/README.md)
