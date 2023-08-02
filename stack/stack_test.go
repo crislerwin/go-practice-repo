@@ -1,6 +1,7 @@
 package stack
 
 import (
+	"container/list"
 	"reflect"
 	"testing"
 )
@@ -94,4 +95,17 @@ func TestStackLinkedList(t *testing.T) {
 		}
 	})
 
+}
+
+func TestStackLinkedListWithList(t *testing.T) {
+	stackList := &SList{
+		stack: list.New(),
+	}
+	t.Run("Stack Push", func(t *testing.T) {
+		stackList.Push(2)
+		stackList.Push(3)
+		if stackList.Length() != 2 {
+			t.Errorf("Stack Push is not work we expected %v but got %v", 2, stackList.Length())
+		}
+	})
 }
