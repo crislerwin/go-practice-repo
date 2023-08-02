@@ -4,4 +4,4 @@
 
 ### Data Structures and Algorithms
 
-- [Stack]([[./stack/README.md]])
+- [Stack](./stack/README.md)
