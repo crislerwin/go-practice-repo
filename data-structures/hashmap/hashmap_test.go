@@ -22,4 +22,11 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Put (reassign): %v Got: %v", 20, got)
 		}
 	})
+	t.Run("Test 3: Adding  new key when there is already some data", func(t *testing.T) {
+		mp.Put("test2", 30)
+		got := mp.Get("test2")
+		if got != 30 {
+			t.Errorf("Put (new key) %v Got: %v", 30, got)
+		}
+	})
 }
