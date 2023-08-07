@@ -36,4 +36,11 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Put (numeric key) %v Got: %v", 40, got)
 		}
 	})
+	t.Run("Test 5: Checking the Contains method", func(t *testing.T) {
+		want := true
+		got := mp.Contains(1)
+		if want != got {
+			t.Errorf("Key '1' exists but couldn't be retrieved")
+		}
+	})
 }

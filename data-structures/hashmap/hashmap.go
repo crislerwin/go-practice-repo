@@ -91,3 +91,8 @@ func (hm *HashMap) Get(key any) any {
 	}
 	return nil
 }
+
+func (hm *HashMap) Contains(key any) bool {
+	node := hm.getNodeByHash(hm.hash(key))
+	return node != nil
+}
