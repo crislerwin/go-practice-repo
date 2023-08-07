@@ -29,4 +29,11 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Put (new key) %v Got: %v", 30, got)
 		}
 	})
+	t.Run("Test 4: adding a numeric key", func(t *testing.T) {
+		mp.Put(1, 40)
+		got := mp.Get(1)
+		if got != 40 {
+			t.Errorf("Put (numeric key) %v Got: %v", 40, got)
+		}
+	})
 }
