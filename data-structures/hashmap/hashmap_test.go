@@ -15,4 +15,11 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Put: %v Got: %v", 10, got)
 		}
 	})
+	t.Run("Test 2: Reassigning the value and checking if Get() is correct", func(t *testing.T) {
+		mp.Put("test", 20)
+		got := mp.Get("test")
+		if got != 20 {
+			t.Errorf("Put (reassign): %v Got: %v", 20, got)
+		}
+	})
 }

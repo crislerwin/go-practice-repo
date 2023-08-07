@@ -12,6 +12,14 @@ func getValuefromChannel(ch chan<- string,
 	ch <- "The End"
 }
 
+func somaTodos(x ...int) int {
+	counter := 0
+	for _, y := range x {
+		counter += y
+	}
+	return counter
+}
+
 func main() {
 	ctx, _ := context.WithTimeout(context.Background(), 3*time.Second)
 	ch1 := make(chan string)
