@@ -43,4 +43,20 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Key '1' exists but couldn't be retrieved")
 		}
 	})
+	t.Run("Test 6: Checking if the key doesn't exist and return false", func(t *testing.T) {
+		want := false
+		got := mp.Contains(2)
+		if got != want {
+			t.Errorf("Key '2' doesn't exist in the map but it says otherwise")
+		}
+
+	})
+	t.Run("Test 7: Checking if the key does not exist Get func return nil", func(t *testing.T) {
+		want := any(nil)
+		got := mp.Get(2)
+		if got != want {
+			t.Errorf("Key '2' doesn't exist in the map but it says otherwise")
+		}
+	})
+
 }
