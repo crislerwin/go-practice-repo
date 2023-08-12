@@ -25,4 +25,19 @@ func TestSingly(t *testing.T) {
 			t.Errorf("Got: %v, want: %v", got, want)
 		}
 	})
+
+	list.AddAtEnd(4)
+	t.Run("Test Add At End", func(t *testing.T) {
+		want := []any{3, 2, 1, 4}
+		got := []any{}
+		current := list.Head
+		got = append(got, current.Val)
+		for current.Next != nil {
+			current = current.Next
+			got = append(got, current.Val)
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("Got: %v, want: %v", got, want)
+		}
+	})
 }
