@@ -32,3 +32,36 @@ func (ll *Singly[T]) AddAtEnd(val T) {
 	cur.Next = n
 	ll.length++
 }
+
+func (ll *Singly[T]) DelAtEnd() (T, bool) {
+	if ll.Head == nil {
+		var r T
+		return r, false
+	}
+
+	if ll.Head.Next == nil {
+		return ll.DelAtBeg()
+	}
+
+	cur := ll.Head
+
+	for ; cur.Next.Next != nil; cur = cur.Next {
+	}
+
+	retval := cur.Next.Val
+	cur.Next = nil
+	ll.length--
+	return retval, true
+}
+
+func (ll *Singly[T]) DelAtBeg() (T, bool) {
+	if ll.Head == nil {
+		var r T
+		return r, false
+	}
+
+	cur := ll.Head
+	ll.Head = cur.Next
+	return cur.Val, true
+
+}

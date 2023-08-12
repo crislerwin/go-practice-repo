@@ -11,7 +11,7 @@ func TestSingly(t *testing.T) {
 	list.AddAtBeg(2)
 	list.AddAtBeg(3)
 
-	t.Run("Test Add At Beg", func(t *testing.T) {
+	t.Run("Test AddAtBeg()", func(t *testing.T) {
 		want := []any{3, 2, 1}
 		got := []any{}
 		current := list.Head
@@ -27,7 +27,7 @@ func TestSingly(t *testing.T) {
 	})
 
 	list.AddAtEnd(4)
-	t.Run("Test Add At End", func(t *testing.T) {
+	t.Run("Test AddAtEnd()", func(t *testing.T) {
 		want := []any{3, 2, 1, 4}
 		got := []any{}
 		current := list.Head
@@ -40,4 +40,27 @@ func TestSingly(t *testing.T) {
 			t.Errorf("Got: %v, want: %v", got, want)
 		}
 	})
+
+	t.Run("Test DelAtBeg()", func(t *testing.T) {
+		want := any(3)
+		got, ok := list.DelAtBeg()
+		if !ok {
+			t.Error("unexpected not ok")
+		}
+		if got != want {
+			t.Errorf("Got: %v, want: %v", got, want)
+		}
+	})
+
+	t.Run("Test DelAtEnd()", func(t *testing.T) {
+		want := any(4)
+		got, ok := list.DelAtEnd()
+		if !ok {
+			t.Error("unexpected not ok")
+		}
+		if got != want {
+			t.Errorf("Got: %v, want: %v", got, want)
+		}
+	})
+
 }
