@@ -63,4 +63,33 @@ func TestSingly(t *testing.T) {
 		}
 	})
 
+	t.Run("Test Count()", func(t *testing.T) {
+		want := 2
+		got := list.Count()
+		if got != want {
+			t.Errorf("Got: %v, want: %v", got, want)
+		}
+	})
+	list2 := Singly[int]{}
+	list2.AddAtBeg(1)
+	list2.AddAtBeg(2)
+	list2.AddAtBeg(3)
+	list2.AddAtBeg(4)
+	list2.AddAtBeg(5)
+	list2.AddAtBeg(6)
+
+	t.Run("Test Reverse()", func(t *testing.T) {
+		want := []any{1, 2, 3, 4, 5, 6}
+		got := []any{}
+		list2.Reverse()
+		current := list2.Head
+		got = append(got, current.Val)
+		for current.Next != nil {
+			current = current.Next
+			got = append(got, current.Val)
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("Got: %v, want: %v", got, want)
+		}
+	})
 }

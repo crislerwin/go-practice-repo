@@ -62,6 +62,23 @@ func (ll *Singly[T]) DelAtBeg() (T, bool) {
 
 	cur := ll.Head
 	ll.Head = cur.Next
+	ll.length--
 	return cur.Val, true
 
+}
+
+func (ll *Singly[T]) Count() int {
+	return ll.length
+}
+
+func (ll *Singly[T]) Reverse() {
+	var prev, Next *Node[T]
+	cur := ll.Head
+	for cur != nil {
+		Next = cur.Next
+		cur.Next = prev
+		prev = cur
+		cur = Next
+	}
+	ll.Head = prev
 }
