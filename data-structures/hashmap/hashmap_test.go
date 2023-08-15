@@ -3,7 +3,7 @@ package hashmap_test
 import (
 	"testing"
 
-	"github.com/crislerwin/godsa/data-structures/hashmap"
+	"github.com/crislerwin/go-practice/data-structures/hashmap"
 )
 
 func TestHashmap(t *testing.T) {

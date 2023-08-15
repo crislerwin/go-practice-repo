@@ -10,3 +10,10 @@ type Unsigned interface {
 type Integer interface {
 	Signed | Unsigned
 }
+
+type Float interface {
+	~float32 | ~float64
+}
+type Ordered interface {
+	Integer | ~string | Float
+}
