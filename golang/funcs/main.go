@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Aula de Funcs
 
 // Func normal
@@ -59,5 +61,8 @@ func main() {
 	resultado := soma(3, 4)
 	println(resultado)
 	println(somaTudo(1, 2, 3, 4, 5))
+
+	complexNum := 3 + 2i
+	fmt.Println(complexNum)
 
 }
