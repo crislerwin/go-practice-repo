@@ -26,6 +26,14 @@ func New() *HashMap {
 	}
 }
 
+func Make(size, capacity uint64) HashMap {
+	return HashMap{
+		size:     size,
+		capacity: capacity,
+		table:    make([]*node, capacity),
+	}
+}
+
 func newNodeWithNext(key any, value any, next *node) *node {
 	return &node{
 		key:   key,

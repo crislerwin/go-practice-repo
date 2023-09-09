@@ -58,5 +58,14 @@ func TestHashmap(t *testing.T) {
 			t.Errorf("Key '2' doesn't exist in the map but it says otherwise")
 		}
 	})
-
+	t.Run("Test 8: Resizing a map", func(t *testing.T) {
+		mp := hashmap.Make(4, 4)
+		for i := 0; i < 20; i++ {
+			mp.Put(i, 40)
+		}
+		got := mp.Get(5)
+		if got != 40 {
+			t.Errorf("Put: %v, Got: %v", got, 40)
+		}
+	})
 }
