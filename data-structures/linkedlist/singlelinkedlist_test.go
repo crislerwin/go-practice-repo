@@ -92,4 +92,24 @@ func TestSingly(t *testing.T) {
 			t.Errorf("Got: %v, want: %v", got, want)
 		}
 	})
+	t.Run("Test ReversePartition", func(t *testing.T) {
+		want := []any{1, 5, 4, 3, 2, 6}
+		got := []any{}
+		err := list2.ReversePartition(2, 5)
+
+		if err != nil {
+			t.Errorf("Incorrect boundary conditions entered%v", err)
+
+		}
+		current := list2.Head
+		got = append(got, current.Val)
+		for current.Next != nil {
+			current = current.Next
+			got = append(got, current.Val)
+
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got: %v, want: %v", got, want)
+		}
+	})
 }
