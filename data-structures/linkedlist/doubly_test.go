@@ -36,4 +36,19 @@ func TestDouble(t *testing.T) {
 			t.Errorf("got: %v, want: %v", got, wantPrev)
 		}
 	})
+	newList.AddAtEnd(4)
+	t.Run("Test AddAtEnd", func(t *testing.T) {
+		want := []int{3, 2, 1, 4}
+		got := []int{}
+		current := newList.Head.Next
+		got = append(got, current.Val)
+		for current.Next != newList.Head {
+			current = current.Next
+			got = append(got, current.Val)
+
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("Got: %v, Want: %v", got, want)
+		}
+	})
 }

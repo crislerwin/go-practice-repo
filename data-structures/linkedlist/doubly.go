@@ -37,3 +37,8 @@ func (ll *Doubly[T]) insert(n, at *Node[T]) *Node[T] {
 func (ll *Doubly[T]) insertValue(val T, at *Node[T]) *Node[T] {
 	return ll.insert(NewNode(val), at)
 }
+
+func (ll *Doubly[T]) AddAtEnd(val T) {
+	ll.lazyInit()
+	ll.insertValue(val, ll.Head.Prev)
+}
