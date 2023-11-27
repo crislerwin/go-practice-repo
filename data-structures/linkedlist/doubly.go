@@ -42,3 +42,22 @@ func (ll *Doubly[T]) AddAtEnd(val T) {
 	ll.lazyInit()
 	ll.insertValue(val, ll.Head.Prev)
 }
+
+func (ll *Doubly[T]) Remove(n *Node[T]) T {
+	n.Prev.Next = n.Next
+	n.Next.Prev = n.Prev
+	n.Next = nil
+	n.Prev = nil
+	return n.Val
+}
+
+func (ll *Doubly[T]) DelAtBeg() (T, bool) {
+	if ll.Head.Next == nil {
+		var r T
+		return r, false
+	}
+	n := ll.Head.Next
+	val := n.Val
+	ll.Remove(n)
+	return val, true
+}
