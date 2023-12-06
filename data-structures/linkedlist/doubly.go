@@ -61,3 +61,14 @@ func (ll *Doubly[T]) DelAtBeg() (T, bool) {
 	ll.Remove(n)
 	return val, true
 }
+
+func (ll *Doubly[T]) DelAtEnd() (T, bool) {
+	if ll.Head.Prev == nil {
+		var r T
+		return r, false
+	}
+	n := ll.Head.Prev
+	val := n.Val
+	ll.Remove(n)
+	return val, true
+}

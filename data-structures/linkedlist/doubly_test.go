@@ -62,5 +62,15 @@ func TestDouble(t *testing.T) {
 			t.Errorf("Got: %v, Want: %v", got, want)
 		}
 	})
+	t.Run("Test DelAtEnd", func(t *testing.T) {
+		want := 4
+		got, ok := newList.DelAtEnd()
+		if !ok {
+			t.Error("unexpected not-ok")
+		}
+		if got != want {
+			t.Errorf("got %v, want: %v", got, want)
+		}
+	})
 
 }
