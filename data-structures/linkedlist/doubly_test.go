@@ -72,5 +72,30 @@ func TestDouble(t *testing.T) {
 			t.Errorf("got %v, want: %v", got, want)
 		}
 	})
+	t.Run("Test Count", func(t *testing.T) {
+		want := 2
+		got := newList.Count()
+		if got != want {
+			t.Errorf("got: %v, want: %v", got, want)
+		}
+	})
+	newList2 := NewDoubly[int]()
+	newList2.AddAtBeg(1)
+	newList2.AddAtBeg(2)
+	newList2.AddAtBeg(3)
+	t.Run("Test Reverse", func(t *testing.T) {
+		want := []int{1, 2, 3}
+		got := []int{}
+		newList2.Reverse()
+		current := newList2.Head.Next
+		got = append(got, current.Val)
+		for current.Next != newList2.Head {
+			current = current.Next
+			got = append(got, current.Val)
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got: %v, want %v", got, want)
+		}
 
+	})
 }

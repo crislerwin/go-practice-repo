@@ -72,3 +72,27 @@ func (ll *Doubly[T]) DelAtEnd() (T, bool) {
 	ll.Remove(n)
 	return val, true
 }
+
+func (ll *Doubly[T]) Count() int {
+	var ctr int = 0
+	if ll.Head.Next == nil {
+		return 0
+	}
+	for curr := ll.Head.Next; curr != ll.Head; curr = curr.Next {
+		ctr += 1
+	}
+	return ctr
+}
+
+func (ll *Doubly[T]) Reverse() {
+	var Prev, Next *Node[T]
+	curr := ll.Head
+
+	for curr != nil {
+		Next = curr.Next
+		curr.Next = Prev
+		curr.Prev = Next
+		Prev = curr
+		curr = Next
+	}
+}
