@@ -47,7 +47,9 @@ func (da *DynamicArray) Remove(index int) error {
 	}
 	copy(da.ElementData[index:], da.ElementData[index+1:da.Size])
 	da.ElementData[da.Size-1] = nil
+
 	da.Size--
+
 	return nil
 }
 
@@ -55,5 +57,22 @@ func (da *DynamicArray) CheckRangeFromIndex(index int) error {
 	if index >= da.Size || index < 0 {
 		return errors.New("index out of range")
 	}
+	return nil
+}
+
+func (da *DynamicArray) Get(index int) (any, error) {
+	err := da.CheckRangeFromIndex(index)
+	if err != nil {
+		return nil, err
+	}
+	return da.ElementData[index], nil
+}
+
+func (da *DynamicArray) Put(index int, element any) error {
+	err := da.CheckRangeFromIndex(index)
+	if err != nil {
+		return err
+	}
+	da.ElementData[index] = element
 	return nil
 }
